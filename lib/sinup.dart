@@ -58,7 +58,7 @@ class _MysinupState extends State<Mysinup> {
                                     color: Colors.black,
                                   ),
                                 ),
-                                hintText: "Name",
+                                hintText: "User Name",
                                 hintStyle: const TextStyle(color: Colors.white),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
@@ -143,21 +143,21 @@ class _MysinupState extends State<Mysinup> {
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.pushNamed(context, 'login');
-                                },
-                                style: const ButtonStyle(),
-                                child: const Text(
-                                  'Sign In',
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                      decoration: TextDecoration.underline,
-                                      color: Colors.white,
-                                      fontSize: 18),
-                                ),
-                              ),
+                            children: const [
+                              //TextButton(
+                                //onPressed: () {
+                                  //Navigator.pushNamed(context, 'login');
+                                //},
+                                //style: const ButtonStyle(),
+                                //child: const Text(
+                                  //'Sign In',
+                                  //textAlign: TextAlign.left,
+                                  //style: TextStyle(
+                                      //decoration: TextDecoration.underline,
+                                      //color: Colors.white,
+                                      //fontSize: 18),
+                                //),
+                              //),
                             ],
                           )
                         ],

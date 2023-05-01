@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Mysinup extends StatefulWidget {
-  const Mysinup({Key? key}) : super(key: key);
+  const Mysinup({Key? key, required String title}) : super(key: key);
 
   @override
   _MysinupState createState() => _MysinupState();
@@ -10,6 +10,10 @@ class Mysinup extends StatefulWidget {
 
 
 class _MysinupState extends State<Mysinup> {
+
+  late String email;
+  late String password;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -143,21 +147,21 @@ class _MysinupState extends State<Mysinup> {
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              //TextButton(
-                                //onPressed: () {
-                                  //Navigator.pushNamed(context, 'login');
-                                //},
-                                //style: const ButtonStyle(),
-                                //child: const Text(
-                                  //'Sign In',
-                                  //textAlign: TextAlign.left,
-                                  //style: TextStyle(
-                                      //decoration: TextDecoration.underline,
-                                      //color: Colors.white,
-                                      //fontSize: 18),
-                                //),
-                              //),
+                            children:  [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pushNamed(context, 'login');
+                                },
+                                style: const ButtonStyle(),
+                                child: const Text(
+                                  'Sign In',
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(
+                                      decoration: TextDecoration.underline,
+                                      color: Colors.white,
+                                      fontSize: 18),
+                                ),
+                              ),
                             ],
                           )
                         ],

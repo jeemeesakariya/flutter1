@@ -8,6 +8,11 @@ class MyLogin extends StatefulWidget {
 }
 
 class _MyLoginState extends State<MyLogin> {
+  late String email;
+  late String password;
+  //final _emailController = TextEditingController();
+  //final _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -93,7 +98,7 @@ class _MyLoginState extends State<MyLogin> {
                             children: [
                               TextButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, 'register');
+                                  Navigator.pushNamed(context, 'sinup');
                                 },
                                 style: const ButtonStyle(),
                                 child: const Text(

@@ -3,6 +3,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:pu_resourcse/login.dart';
+// 'package:pu_resourcse/sinup.dart';
 class Splash extends StatefulWidget{
   const Splash({Key? key}) : super(key: key);
 
@@ -21,7 +22,7 @@ class _SplashState extends State<Splash> {
 
     Timer(const Duration(seconds: 3),(){
 
-      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const MyLogin(title: 'MyLogin',),));
+      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const MyLogin(title: 'Mylogin',),));
     });
   }
   @override

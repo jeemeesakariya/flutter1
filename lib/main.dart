@@ -1,8 +1,10 @@
 
 //import 'package:firebase_auth/firebase_auth.dart';
 
-import 'firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 
+import 'firebase_options.dart';
+//import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 
@@ -12,6 +14,7 @@ import 'package:pu_resourcse/splash.dart';
 
 
 import 'login.dart';
+import 'mainpage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,9 +23,7 @@ void main() async {
   );
   runApp(const MyApp());
 }
-class Firebase {
-  static initializeApp({required options}) {}
-}
+
 
 class MyApp extends StatelessWidget{
   const MyApp ({super.key});     //({Key? key})  : super(key: key);
@@ -39,10 +40,9 @@ class MyApp extends StatelessWidget{
       home: const Splash(),
 
         routes: {
-          'sinup': (context) => const Mysinup(title: ''),
-
+          'sinup': (context) => const Mysinup(title: '',),
           'login': (context) => const MyLogin( title: '',),
-
+          'maimpage': (context) => const MainPage(title: '',),
 
 
         }

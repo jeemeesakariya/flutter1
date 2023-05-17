@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+//import 'homepage.dart';
 
 class MyLogin extends StatefulWidget {
   const MyLogin({Key? key, required String title}) : super(key: key);
@@ -10,8 +13,23 @@ class MyLogin extends StatefulWidget {
 class _MyLoginState extends State<MyLogin> {
   late String email;
   late String password;
-  //final _emailController = TextEditingController();
-  //final _passwordController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  Future signin() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: _emailController.text.trim(),
+        password: _passwordController.text.trim()
+
+    );
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+        super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,29 +61,37 @@ class _MyLoginState extends State<MyLogin> {
                       margin: const EdgeInsets.only(left: 35, right: 35),
                       child: Column(
                         children: [
-                          TextField(
-                            style: const TextStyle(color: Colors.black),
-                            decoration: InputDecoration(
-                                fillColor: Colors.grey.shade100,
-                                filled: true,
-                                hintText: "Email",
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                )),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: TextField(
+                              controller: _emailController,
+                              style: const TextStyle(color: Colors.black),
+                              decoration: InputDecoration(
+                                  fillColor: Colors.grey.shade100,
+                                  filled: true,
+                                  hintText: "Email",
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  )),
+                            ),
                           ),
                           const SizedBox(
                             height: 30,
                           ),
-                          TextField(
-                            style: const TextStyle(),
-                            obscureText: true,
-                            decoration: InputDecoration(
-                                fillColor: Colors.grey.shade100,
-                                filled: true,
-                                hintText: "Password",
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                )),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: TextField(
+                              controller: _passwordController,
+                              style: const TextStyle(),
+                              obscureText: true,
+                              decoration: InputDecoration(
+                                  fillColor: Colors.grey.shade100,
+                                  filled: true,
+                                  hintText: "Password",
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  )),
+                            ),
                           ),
                           const SizedBox(
                             height: 40,
@@ -83,7 +109,9 @@ class _MyLoginState extends State<MyLogin> {
                                 backgroundColor: const Color(0xff4c505b),
                                 child: IconButton(
                                     color: Colors.white,
-                                    onPressed: () {},
+                                    onPressed:(){
+                                      signin();
+                                    },
                                     icon: const Icon(
                                       Icons.arrow_forward,
                                     )),

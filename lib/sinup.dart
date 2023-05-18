@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Mysinup extends StatefulWidget {
+
   const Mysinup({Key? key, required String title}) : super(key: key);
 
   @override
@@ -13,6 +15,21 @@ class _MysinupState extends State<Mysinup> {
 
   late String email;
   late String password;
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+Future signup()  async{
+  await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      email: _emailController.text.trim(),
+      password: _passwordController.text.trim()
+  );
+}
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,6 +89,7 @@ class _MysinupState extends State<Mysinup> {
                             height: 30,
                           ),
                           TextField(
+                            controller: _emailController,
                             style: const TextStyle(color: Colors.white),
                             decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
@@ -96,6 +114,7 @@ class _MysinupState extends State<Mysinup> {
                             height: 30,
                           ),
                           TextField(
+                            controller: _passwordController,
                             style: const TextStyle(color: Colors.white),
                             obscureText: true,
                             decoration: InputDecoration(
@@ -135,7 +154,9 @@ class _MysinupState extends State<Mysinup> {
                                 backgroundColor: const Color(0xff4c505b),
                                 child: IconButton(
                                     color: Colors.white,
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      signup();
+                                    },
                                     icon: const Icon(
                                       Icons.arrow_forward,
                                     )),

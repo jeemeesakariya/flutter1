@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import 'homepage.dart';
+
 //import 'mainpage.dart';
 
 //import 'homepage.dart';
@@ -22,10 +24,6 @@ class _MyLoginState extends State<MyLogin> {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
-
-
-
-
     );
   }
 
@@ -115,7 +113,9 @@ class _MyLoginState extends State<MyLogin> {
                                 child: IconButton(
                                     color: Colors.white,
                                     onPressed:(){
-                                      signin();
+                                      signin().then((value){
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) => const MyHomePage(title: '',)));
+                                      });
                                     },
                                     icon: const Icon(
                                       Icons.arrow_forward,

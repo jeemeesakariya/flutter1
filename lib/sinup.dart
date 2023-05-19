@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import 'homepage.dart';
+
 class Mysinup extends StatefulWidget {
 
   const Mysinup({Key? key, required String title}) : super(key: key);
@@ -22,8 +24,10 @@ Future signup()  async{
   await FirebaseAuth.instance.createUserWithEmailAndPassword(
       email: _emailController.text.trim(),
       password: _passwordController.text.trim()
+
   );
 }
+
   @override
   void dispose() {
     _emailController.dispose();
@@ -155,7 +159,9 @@ Future signup()  async{
                                 child: IconButton(
                                     color: Colors.white,
                                     onPressed: () {
-                                      signup();
+                                      signup().then((value){
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) => const MyHomePage(title: '',)));
+                                      });
                                     },
                                     icon: const Icon(
                                       Icons.arrow_forward,

@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+//import 'mainpage.dart';
+
 //import 'homepage.dart';
 
 class MyLogin extends StatefulWidget {
@@ -19,7 +21,10 @@ class _MyLoginState extends State<MyLogin> {
   Future signin() async {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: _emailController.text.trim(),
-        password: _passwordController.text.trim()
+        password: _passwordController.text.trim(),
+
+
+
 
     );
   }

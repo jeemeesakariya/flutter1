@@ -5,7 +5,7 @@ import 'login.dart';
 
 
 class MainPage extends StatelessWidget{
-  const MainPage({super.key, required String title});
+  const MainPage({super.key, required String title,});
 
   @override
   Widget build(BuildContext context) {

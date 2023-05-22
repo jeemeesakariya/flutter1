@@ -3,6 +3,8 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import 'login.dart';
 //import 'package:pu_resourcse/login.dart';
 //import 'package:flutter/material.dart;;;
 
@@ -40,8 +42,11 @@ class _BranchesState extends State<Branches>{
 
           IconButton(
               onPressed: (){
-          FirebaseAuth.instance.signOut();
+          FirebaseAuth.instance.signOut().then((value){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const MyLogin (title: '',)));
+            });
           },
+
               icon: const Icon(Icons.logout)
           )
         ],

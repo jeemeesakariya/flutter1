@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import 'homepage.dart';
+//import 'homepage.dart';
+import 'listview1.dart';
 
 class Mysinup extends StatefulWidget {
 
@@ -160,7 +161,7 @@ Future signup()  async{
                                     color: Colors.white,
                                     onPressed: () {
                                       signup().then((value){
-                                        Navigator.push(context, MaterialPageRoute(builder: (context) => const MyHomePage(title: '',)));
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) => const Branches()));
                                       });
                                     },
                                     icon: const Icon(

@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:pu_resourcse/listview1.dart';
 
-import 'homepage.dart';
+//import 'homepage.dart';
 
 //import 'mainpage.dart';
 
@@ -114,7 +115,7 @@ class _MyLoginState extends State<MyLogin> {
                                     color: Colors.white,
                                     onPressed:(){
                                       signin().then((value){
-                                        Navigator.push(context, MaterialPageRoute(builder: (context) => const MyHomePage(title: '',)));
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) => const Branches()));
                                       });
                                     },
                                     icon: const Icon(

@@ -178,7 +178,7 @@ Future signup()  async{
                             children:  [
                               TextButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, 'login');
+                                  Navigator.pushReplacementNamed(context, 'login');
                                 },
                                 style: const ButtonStyle(),
                                 child: const Text(

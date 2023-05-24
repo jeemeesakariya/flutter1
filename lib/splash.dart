@@ -1,15 +1,8 @@
 import 'dart:async';
-
-
 import 'package:flutter/material.dart';
-//import 'package:pu_resourcse/login.dart';
-
-//import 'login.dart';
+//import 'loginpage1.dart';
 import 'mainpage.dart';
-//import 'mainpage.dart';
 
-//import 'mainpage.dart';
-// 'package:pu_resourcse/sinup.dart';
 class Splash extends StatefulWidget{
   const Splash({Key? key}) : super(key: key);
 
@@ -23,17 +16,17 @@ class _SplashState extends State<Splash> {
 
   @override
   void initState() {
-    // TODO: implement initState
+
     super.initState();
 
     Timer(const Duration(seconds: 3),(){
 
-      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const  MainPage (title: '',),));
+      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const  MainPage(title: '',),));
     });
   }
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+
     return Scaffold(
       body: Container(
          color: Colors.white,

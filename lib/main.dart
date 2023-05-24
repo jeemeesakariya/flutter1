@@ -13,7 +13,8 @@ import 'package:pu_resourcse/splash.dart';
 //import 'package:firebase_auth/firebase_auth.dart';
 
 
-import 'login.dart';
+//import 'login.dart';
+import 'loginpage1.dart';
 import 'mainpage.dart';
 
 void main() async {
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget{
 
         routes: {
           'sinup': (context) => const Mysinup(title: '',),
-          'login': (context) => const MyLogin( title: '', ),
+          'login': (context) => const LoginPage(),
           'maimpage': (context) => const MainPage(title: '',),
 
 

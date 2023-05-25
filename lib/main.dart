@@ -1,18 +1,8 @@
-
-//import 'package:firebase_auth/firebase_auth.dart';
-
 import 'package:firebase_core/firebase_core.dart';
-
 import 'firebase_options.dart';
-//import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
-
 import 'package:pu_resourcse/sinup.dart';
 import 'package:pu_resourcse/splash.dart';
-//import 'package:firebase_auth/firebase_auth.dart';
-
-
 //import 'login.dart';
 import 'loginpage1.dart';
 import 'mainpage.dart';

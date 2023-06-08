@@ -25,6 +25,7 @@ class _LoginPageState extends State<LoginPage> {
       email: _emailController.text.trim(),
       password: _passwordController.text.trim(),
     );
+
   }
 
   @override
@@ -55,7 +56,7 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(height: 50,),
 
                     //welcome bake
-                    Text('welcome bake you\'ve been missed!',
+                    Text('welcome back you\'ve been missed!',
                     style: TextStyle(
                       color: Colors.grey[700],
                       fontSize: 16,
@@ -125,9 +126,12 @@ class _LoginPageState extends State<LoginPage> {
                     //signin button
                     GestureDetector(
                       onTap: (){
-                        signin().then((value){
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const Branches()));
-                        });
+
+                          signin().then((value) {
+                            Navigator.push(context, MaterialPageRoute(
+                                builder: (context) => const Branches()));
+                          });
+
                       },
                       child: Container(
                         padding: const EdgeInsets.all(25),
